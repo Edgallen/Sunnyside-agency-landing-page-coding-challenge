@@ -7,8 +7,10 @@
 
   /*========== Colors ==========*/
   --home-color: hsla(200, 100%, 62%, 1);
+  --scroll-color: hsl(212, 27%, 19%, 0.5);
 
   --soft-red-color: hsl(7, 99%, 70%);
+  --soft-yellow-color: hsl(51, 100%, 77%);
   --yellow-color: hsl(51, 100%, 49%);
   --dark-desaturated-cyan-color: hsl(167, 40%, 24%);
   --dark-blue-color: hsl(198, 62%, 26%);
@@ -144,12 +146,15 @@ img{
 .header{
   width: 100%;
   background-color: var(--home-color);
-  padding-top: var(--header-height);
+  padding: var(--header-height) 0;
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: var(--z-fixed);
   background: transparent;
+  transition: .4s;
+}
+
+.scroll-header{
+  background-color: var(--scroll-color);
 }
 
 /*=============== NAV ===============*/
@@ -163,6 +168,13 @@ img{
 .nav__logo{
   display: flex;
   width: 10rem;
+}
+
+.nav__toggle{
+  font-size: 2rem;
+  color: var(--white-color);
+  cursor: pointer;
+  z-index: 2;
 }
 
 @media screen and (max-width: 767px){
@@ -247,7 +259,6 @@ img{
 
 .services__container{
   display: grid;
-  gap: 2rem;
   margin-left: 0;
   margin-right: 0;
 }
@@ -257,7 +268,7 @@ img{
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  margin: var(--mb-3) var(--mb-2-5);
+  margin: var(--mb-2-5) var(--mb-2-5) var(--mb-1) var(--mb-2-5);
 }
 
 .services__title{
@@ -277,14 +288,26 @@ img{
   color: var(--title-color);
   font-weight: var(--font-black);
   z-index: 2;
+  transition: .4s;
+}
+
+.services__button:hover{
+  color: var(--grayish-blue-color);
 }
 
 .services__content::after{
   content: '';
   width: 125px;
-  height: 12px;
+  height: 8px;
   border-radius: 1rem;
-  background-color: red;
-  transform: translate(1px, -44px);
+  transform: translate(0.5px, -41px);
   z-index: 1;
+}
+
+.services__content.yellow::after{
+  background-color: var(--soft-yellow-color);
+  transition: .4s;
+}
+.services__content.red::after{
+  background-color: var(--soft-red-color);
 }
