@@ -1,25 +1,41 @@
-/*=============== SHOW MENU ===============*/ 
+/*=============== SHOW MENU VARS ===============*/ 
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
 
 
-if(navMenu){
-  console.log(navMenu.style.display)
-}
 /*===== MENU SHOW =====*/
-/* Validate if constant exists */
-navToggle.addEventListener('click', () =>{
-    navMenu.style.display = "block";
-})
+/* If someone is reading it, i know it's dumb, but it gets the job done */
 
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if(navMenu.style.display === "block"){
+if(navToggle){
   navToggle.addEventListener('click', () =>{
-      navMenu.style.display == "none";
+      navMenu.classList.add('show-menu')
+      navToggle.classList.add('hide-menu')
+      navClose.classList.add('show-menu')
   })
 }
+
+/*===== MENU HIDE =====*/
+if(navClose){
+  navClose.addEventListener('click', () =>{
+      navMenu.classList.remove('show-menu')
+      navToggle.classList.remove('hide-menu')
+      navClose.classList.remove('show-menu')
+  })
+}
+
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove('show-menu');
+    navToggle.classList.remove('hide-menu');
+    navClose.classList.remove('show-menu');
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader(){

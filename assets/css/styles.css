@@ -177,6 +177,15 @@ img{
   z-index: 2;
 }
 
+.nav__close{
+  position: absolute;
+  right: 0;
+  top: 43%;
+  margin-right: var(--mb-1-5);
+  cursor: pointer;
+  display: none;
+}
+
 @media screen and (max-width: 767px){
   .nav__menu{
     position: fixed;
@@ -187,6 +196,15 @@ img{
     padding: 4rem 0 3rem;
     transition: .4s;
     /* border-right: 25px solid transparent; */
+    display: none;
+    transition: .4s;
+  }
+
+  .show-menu {
+    display: block;
+  }
+
+  .hide-menu{
     display: none;
   }
 
@@ -252,18 +270,18 @@ img{
   gap: 3.5rem;
 }
 
-/*=============== SERVICES ===============*/
-.services{
+/*=============== ABOUT ===============*/
+.about{
   padding: 0;
 }
 
-.services__container{
+.about__container{
   display: grid;
   margin-left: 0;
   margin-right: 0;
 }
 
-.services__content{
+.about__content{
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -271,19 +289,19 @@ img{
   margin: var(--mb-2-5) var(--mb-2-5) var(--mb-1) var(--mb-2-5);
 }
 
-.services__title{
+.about__title{
   font-size: var(--h1-font-size);
   font-weight: var(--font-black);
   text-align: center;
 }
 
-.services__description{
+.about__description{
   font-size: var(--h3-font-size);
   text-align: center;
   line-height: 1.8rem;
 }
 
-.services__button{
+.about__button{
   font-family: var(--font-fraunces);
   color: var(--title-color);
   font-weight: var(--font-black);
@@ -291,11 +309,11 @@ img{
   transition: .4s;
 }
 
-.services__button:hover{
+.about__button:hover{
   color: var(--grayish-blue-color);
 }
 
-.services__content::after{
+.about__content::after{
   content: '';
   width: 125px;
   height: 8px;
@@ -304,10 +322,10 @@ img{
   z-index: 1;
 }
 
-.services__content.yellow::after{
+.about__content.yellow::after{
   background-color: var(--soft-yellow-color);
   transition: .4s;
 }
-.services__content.red::after{
+.about__content.red::after{
   background-color: var(--soft-red-color);
 }
