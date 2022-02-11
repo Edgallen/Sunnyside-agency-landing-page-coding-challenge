@@ -8,6 +8,8 @@
   /*========== Colors ==========*/
   --home-color: hsla(200, 100%, 62%, 1);
   --scroll-color: hsl(212, 27%, 19%, 0.5);
+  --background-color: hsl(26, 100%, 99%);
+  --footer-background-color: hsl(167, 44%, 70%);
 
   --soft-red-color: hsl(7, 99%, 70%);
   --soft-yellow-color: hsl(51, 100%, 77%);
@@ -49,6 +51,7 @@
   --mb-2: 2rem;
   --mb-2-5: 2.5rem;
   --mb-3: 3rem;
+  --mb-3-5: 3.5rem;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
@@ -116,7 +119,7 @@ img{
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section{
-  padding: 4rem 0 2rem;
+  padding: 3rem 0 2rem;
 }
 
 .section__title{
@@ -273,6 +276,7 @@ img{
 /*=============== ABOUT ===============*/
 .about{
   padding: 0;
+  background-color: var(--background-color);
 }
 
 .about__container{
@@ -333,7 +337,6 @@ img{
 /*=============== SERVICES ===============*/
 .services{
   padding: 0;
-  overflow: hidden;
 }
 
 .services__container{
@@ -378,4 +381,97 @@ img{
 
 .blue{
   color: var(--dark-blue-color);
+}
+
+/*=============== PROJECTS ===============*/
+
+.projects{
+  background-color: var(--background-color);
+}
+
+.projects__container{
+  margin: var(--mb-3-5) var(--mb-2); 
+  gap: var(--mb-3-5);
+}
+
+.projects__title{
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-black);
+  letter-spacing: .3rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--dark-grayish-blue-color);
+}
+
+.projects__card{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mb-1-5);
+}
+
+.projects__img{
+  width: 60px;
+  border-radius: var(--mb-3);
+}
+
+.projects__description{
+  font-weight: var(--font-black);
+  text-align: center;
+  line-height: var(--mb-1-5);
+}
+
+.projects__initials{
+  text-align: center;
+  display: grid;
+  gap: var(--mb-0-5);
+}
+
+.projects__name{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-black);
+}
+
+.projects__job{
+  font-size: var(--small-font-size);
+  color: var(--grayish-blue-color);
+}
+
+/*=============== FOOTER ===============*/
+
+.footer{
+  padding-top: 0;
+  background-color: var(--footer-background-color);
+}
+
+.footer__container{
+  display: grid;
+  gap: var(--mb-2);
+  margin: 0;
+}
+
+.footer__gallery{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer__menu{
+  display: grid;
+  gap: var(--mb-2);
+}
+
+.footer__title{
+  display: grid;
+  margin: auto;
+}
+
+.footer__links{
+  display: flex;
+  justify-content: center;
+  gap: var(--mb-1-5);
+}
+
+.footer__social{
+  display: flex;
+  justify-content: center;
 }
