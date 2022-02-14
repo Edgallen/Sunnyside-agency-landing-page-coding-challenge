@@ -10,6 +10,7 @@
   --scroll-color: hsl(212, 27%, 19%, 0.5);
   --background-color: hsl(26, 100%, 99%);
   --footer-background-color: hsl(167, 44%, 70%);
+  --footer-text-color: hsl(166, 42%, 33%);
 
   --soft-red-color: hsl(7, 99%, 70%);
   --soft-yellow-color: hsl(51, 100%, 77%);
@@ -193,7 +194,7 @@ img{
   .nav__menu{
     position: fixed;
     background-color: var(--body-color);
-    top: 2%;
+    top: 2.5%;
     left: 5%;
     width: 90%;
     padding: 4rem 0 3rem;
@@ -211,6 +212,13 @@ img{
     display: none;
   }
 
+}
+
+.nav__icon{
+  position: absolute;
+  top: 3rem;
+  right: 0%;
+  width: 50px;
 }
 
 .nav__list{
@@ -446,7 +454,7 @@ img{
 
 .footer__container{
   display: grid;
-  gap: var(--mb-2);
+  gap: var(--mb-3-5);
   margin: 0;
 }
 
@@ -457,21 +465,34 @@ img{
 
 .footer__menu{
   display: grid;
-  gap: var(--mb-2);
+  gap: var(--mb-2-5);
 }
 
 .footer__title{
   display: grid;
   margin: auto;
+  width: 10rem;
 }
 
 .footer__links{
   display: flex;
   justify-content: center;
-  gap: var(--mb-1-5);
+  gap: var(--mb-2-5);
+}
+
+.footer__link{
+  font-size: 1.12rem;
+  color: var(--dark-moderate-cyan-color);
 }
 
 .footer__social{
   display: flex;
   justify-content: center;
+  gap: var(--mb-1-5);
+  margin: var(--mb-2) 0;
+}
+
+.footer__social-link{
+  font-size: 1.6rem;
+  color: var(--footer-text-color);
 }
