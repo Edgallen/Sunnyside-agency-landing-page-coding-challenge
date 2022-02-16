@@ -1,5 +1,4 @@
 /*=============== GOOGLE FONTS ===============*/
-/*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
@@ -7,7 +6,6 @@
   --header-height: 1.5rem;
 
   /*========== Colors ==========*/
-  --home-color: hsla(200, 100%, 62%, 1);
   --home-color-alt: rgb(143, 218, 255);
   --scroll-color: hsl(212, 27%, 19%, 0.5);
   --background-color: hsl(26, 100%, 99%);
@@ -15,7 +13,7 @@
   --footer-text-color: hsl(166, 42%, 33%);
 
   --soft-red-color: hsl(7, 99%, 70%);
-  --red-color: hsl(7, 100%, 62%);
+  --red-color: hsl(7, 100%, 57%);
   --soft-yellow-color: hsl(51, 100%, 77%);
   --yellow-color: hsl(51, 100%, 49%);
   --dark-desaturated-cyan-color: hsl(167, 40%, 24%);
@@ -151,7 +149,6 @@ img{
 /*=============== HEADER ===============*/
 .header{
   width: 100%;
-  background-color: var(--home-color);
   padding: var(--header-height) 0;
   position: fixed;
   z-index: var(--z-fixed);
@@ -287,6 +284,14 @@ img{
   gap: 3.5rem;
 }
 
+.home__button{
+  transition: .4s;
+}
+
+.home__button:hover{
+  transform: translate(0px, 30px);
+}
+
 /*=============== ABOUT ===============*/
 .about{
   padding: 0;
@@ -375,6 +380,7 @@ img{
 .services__card{
   position: relative;
   display: flex;
+  justify-content: center;
 }
 
 .services__content{
@@ -503,6 +509,11 @@ img{
 .footer__link{
   font-size: 1.12rem;
   color: var(--dark-moderate-cyan-color);
+  transition: .4s;
+}
+
+.footer__link:hover{
+  color: var(--white-color);
 }
 
 .footer__social{
@@ -515,6 +526,11 @@ img{
 .footer__social-link{
   font-size: 1.6rem;
   color: var(--footer-text-color);
+  transition: .4s;
+}
+
+.footer__social-link:hover{
+  color: var(--white-color);
 }
 
 /*=============== SCROLL BAR ===============*/
@@ -577,9 +593,12 @@ img{
   .nav__close{
     display: none;
   }
+  .nav__icon{
+    display: none;
+  }
   .nav__list{
     flex-direction: row;
-    gap: var(--mb-2);
+    gap: var(--mb-2-5);
     padding: 0;
     background-color: transparent;
   }
@@ -591,6 +610,15 @@ img{
     font-size: var(--normal-font-size);
     color: var(--white-color);
     background: var(--home-color-alt);
+    text-transform: uppercase;
+    border-radius: 2rem;
+    padding: .8rem 1.5rem;
+  }
+  .desktop-bg{
+    font-family: var(--font-fraunces);
+    font-size: var(--normal-font-size);
+    color: black;
+    background: var(--white-color);
     text-transform: uppercase;
     border-radius: 2rem;
     padding: .8rem 1.5rem;
@@ -616,6 +644,7 @@ img{
   .about__content{
     align-items: start;
     align-self: center;
+    max-width: 500px;
   }
   .about__title{
     text-align: start;
@@ -641,5 +670,26 @@ img{
   .footer__gallery{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1180px){
+  .about__card:nth-child(1){
+    justify-content: space-between;
+  }
+  .about__content{
+    margin-left: 5%;
+  }
+
+  .services__container{
+    justify-content: center;
+  }
+  .services__img{
+    width: 80rem;
+  }
+  .services__content{
+    top: 60%;
+    max-width: 30rem;
   }
 }
